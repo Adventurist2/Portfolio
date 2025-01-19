@@ -3,21 +3,22 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-export function TextOpacity({ children }: { children: React.ReactNode }) {
+export function TextOpacity({ children }: { children: string}) {
+  // console.log(children);
   const element = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: element,
-    offset: ["0 0.7", "0.05 0"],  
+    offset: ["start end", "end 0.8"], 
   });
-  const paragraph = (children as any)?.props?.children;
+  const paragraph = children;
   const words = paragraph.split(" ");
 
   return (
     <div
       ref={element}
-      className="text-3xl flex flex-wrap"
+      className=" flex flex-wrap items-center"
       style={{
-        fontSize: "50px",
+        fontSize: "35px",
         padding: "40px",
         lineHeight: "1",
       }}

@@ -7,6 +7,8 @@ const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
+
+
 export default {
     // darkMode: ["class"],
     content: [
@@ -32,7 +34,8 @@ export default {
   		},
   		animation: {
   			spotlight: 'spotlight 2s ease .75s 1 forwards',
-  			scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite'
+  			scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
+			shimmer: "shimmer 2s linear infinite"
   		},
   		keyframes: {
   			spotlight: {
@@ -49,7 +52,15 @@ export default {
   				to: {
   					transform: 'translate(calc(-50% - 0.5rem))'
   				}
-  			}
+  			},
+			  shimmer: {
+				from: {
+				  "backgroundPosition": "0 0"
+				},
+				to: {
+				  "backgroundPosition": "-200% 0"
+				}
+			  },
   		},
   		// colors: {
   		// 	background: 'hsl(var(--background))',

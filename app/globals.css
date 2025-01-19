@@ -94,3 +94,86 @@ body {
     rgba(0, 179, 255, 0.2),rgba(0, 0, 0,0.2)
   );
 }
+.skillcard{
+  background-color: transparent;
+  backdrop-filter: blur(30px);
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2),rgba(0, 0, 0,0.2)
+  );
+}
+
+
+.footer{
+  background-image: radial-gradient(circle, rgba(128, 0, 9, 0.5), transparent);
+  background-image: radial-gradient(circle, rgba(0, 128, 41, 0.5), transparent);
+  backdrop-filter: blur(30px);
+  
+}
+
+.parent {
+  font-family: sans-serif;
+  /* background-color: rgb(106, 50, 202); */
+  height: 20rem;
+  width: 58rem;
+  padding: 4px;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  position: relative;
+}
+
+.image {
+  background-color: rgb(255, 255, 255, 0.5);
+  height: 20rem;
+  width: 28rem;
+  border-radius: 10px;
+  position: absolute;
+  top: 0px;
+  left: 30rem;
+}
+
+.fog {
+  width: 34rem;
+  height: 10rem;
+  border-radius: 10px;
+  background-color: transparent;
+  backdrop-filter: blur(30px);
+  background-image: linear-gradient(
+    120deg,
+    rgba(125, 149, 255, 0.5),
+    rgba(255, 255, 255, 0.2)
+  );
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  z-index: 10;
+  top: 5rem;
+}
+.photo {
+  right: 0;
+  bottom: 0;
+}
+
+.header {
+  position: relative;
+}
+
+.l2 {
+  position: absolute;
+  top: 1.9rem;
+}
+.l1{
+  color: aqua;
+}
+.project_footer {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  left: 15px;
+  gap: 15px;
+}
