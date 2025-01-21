@@ -1,6 +1,5 @@
 import React from "react";
 import { TextOpacity } from "./ui/Textopacity";
-import { Cover } from "./ui/cover";
 import { useContext } from "react";
 import { Refcontext } from "@/app/provider";
 

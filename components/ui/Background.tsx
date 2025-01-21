@@ -1,5 +1,4 @@
 import { Spotlight } from "./Spotlight"
-import { Typewriter } from "./Typewriting"
 
 export function Background(){
     return <div className=" fixed w-screen inset-0 h-screen bg-hero bg-grid-white/[0.05] ">

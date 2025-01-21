@@ -1,5 +1,3 @@
-
-import { ProgressBar } from "./ui/Progressbar";
 import { useContext, useRef } from "react";
 import { Refcontext } from "@/app/provider";
 

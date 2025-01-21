@@ -1,11 +1,10 @@
-// import Rainbutton from "./button/Rainbow_button";
 import React,{ useContext } from "react";
 import { Refcontext } from "@/app/provider";
-import { Hero } from "./Herosection";
 
-type SectionName = 'Heroref' | 'AboutRef' | 'ProjectRef' | 'ContactRef';
+type SectionName = 'skillRef'|'Heroref' | 'AboutRef' | 'ProjectRef' | 'ContactRef';
 
 interface SectionRefs {
+    skillRef: React.RefObject<HTMLDivElement>;
     Heroref: React.RefObject<HTMLDivElement>;
     AboutRef: React.RefObject<HTMLDivElement>;
     ProjectRef: React.RefObject<HTMLDivElement>;
@@ -15,6 +14,7 @@ interface SectionRefs {
 export default function Appbar(){
     const {skillRef,AboutRef,ProjectRef,ContactRef,HeroRef} = useContext(Refcontext);
     const sectionRef:SectionRefs = {
+        skillRef: skillRef,
         Heroref: HeroRef,
         AboutRef: AboutRef,
         ProjectRef: ProjectRef,

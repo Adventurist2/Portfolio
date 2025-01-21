@@ -1,6 +1,6 @@
 "use client"
-import React,{useEffect,useRef} from "react";
-import { motion,useInView,useAnimation,useIsPresent } from "framer-motion";
+import React from "react";
+import { motion,} from "framer-motion";
 
 
 export function Reveal({children}:{children:React.ReactNode}){

@@ -1,8 +1,5 @@
 "use client"
-
-import { Spotlight } from "./ui/Spotlight";
 import { Typewriter } from "./ui/Typewriting";
-import { downloadCV } from "@/lib/actions/serve";
 const ImageLink = "/assests/4058273.png";
 import React,{useState} from "react";
 
