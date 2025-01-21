@@ -55,12 +55,14 @@ export function Typewriter({
   }, [text, isDeleting, currentStringIndex, strings, loop, pauseTime]);
 
   useEffect(() => {
-    const timeout = setTimeout(
-      handleTyping,
-      isDeleting ? deletingSpeed : typingSpeed
-    );
-    return () => clearTimeout(timeout);
-  }, [handleTyping, isDeleting, deletingSpeed, typingSpeed]);
+    if (autoStart) {
+      const timeout = setTimeout(
+        handleTyping,
+        isDeleting ? deletingSpeed : typingSpeed
+      );
+      return () => clearTimeout(timeout);
+    }
+  }, [handleTyping, isDeleting, deletingSpeed, typingSpeed, autoStart]); // Added autoStart to dependencies
 
   return (
     <div className={`block-flex items-center ${className}`} style={{ minWidth: `${maxStringLength}ch` }}>
