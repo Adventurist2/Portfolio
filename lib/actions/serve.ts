@@ -1,7 +1,5 @@
 "use server";
 import nodemailer from "nodemailer";
-import path from "path";
-import fs from "fs";
 
 
 export async function sendMail({name, email, subject, message}:{name:string, email:string, subject:string, message:string}) {

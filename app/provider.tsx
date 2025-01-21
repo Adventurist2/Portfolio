@@ -1,21 +1,30 @@
-"use Client";
-import { createContext, useRef } from 'react';
+"use client";
+import { createContext, ReactNode, useRef } from "react";
 
-export const Refcontext = createContext<any>(null);
+type RefContextType = {
+  skillRef: React.RefObject<HTMLDivElement | null>;
+  AboutRef: React.RefObject<HTMLDivElement | null>;
+  ProjectRef: React.RefObject<HTMLDivElement | null>;
+  ContactRef: React.RefObject<HTMLDivElement | null>;
+  HeroRef: React.RefObject<HTMLDivElement | null>;
+};
 
-export default function Appcontext({children}:any) {
-    const skillRef= useRef<HTMLDivElement|null>(null);
-    const AboutRef = useRef<HTMLDivElement|null>(null);
-    const ProjectRef = useRef<HTMLDivElement|null>(null);
-    const ContactRef = useRef<HTMLDivElement|null>(null);
-    const HeroRef = useRef<HTMLDivElement|null>(null);
+export const Refcontext = createContext<RefContextType | null>(null);
 
-    return (
-        <Refcontext.Provider value={{skillRef,AboutRef,ProjectRef,ContactRef,HeroRef}}>
-            {
-                children
-            }
-        </Refcontext.Provider>
-    )
+type AppcontextProps = {
+  children: ReactNode;
+};
 
+export default function Appcontext({ children }: AppcontextProps) {
+  const skillRef = useRef<HTMLDivElement | null>(null);
+  const AboutRef = useRef<HTMLDivElement | null>(null);
+  const ProjectRef = useRef<HTMLDivElement | null>(null);
+  const ContactRef = useRef<HTMLDivElement | null>(null);
+  const HeroRef = useRef<HTMLDivElement | null>(null);
+
+  return (
+    <Refcontext.Provider value={{ skillRef, AboutRef, ProjectRef, ContactRef, HeroRef }}>
+      {children}
+    </Refcontext.Provider>
+  );
 }

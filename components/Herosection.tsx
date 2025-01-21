@@ -2,6 +2,8 @@
 import { Typewriter } from "./ui/Typewriting";
 const ImageLink = "/assests/4058273.png";
 import React,{useState} from "react";
+import Image from 'next/image';
+
 
 export function Hero() {
 
@@ -31,8 +33,7 @@ export function Hero() {
 
     const [isDownloading, setIsDownloading] = useState(false);
   
-  const handleDownload = async (e:any) => {
-    e.preventDefault();
+  const handleDownload = async () => {
     setIsDownloading(true);
     try {
       const response = await fetch('/api/download_file', { method: 'GET' });
@@ -60,11 +61,15 @@ export function Hero() {
             {/* Image Section */}
             <div className="flex justify-center items-center">
                 <div className="rounded-full bg-amber-500 w-36 h-36 sm:w-64 sm:h-64 lg:w-[350px] lg:h-[350px] overflow-hidden mix-blend-lighten">
-                    <img
-                        src={ImageLink}
-                        alt="Hero face"
-                        className="object-contain w-full h-full"
-                    />
+                    <Image
+                          src={ImageLink}
+                          alt="Hero face"
+                          className="object-contain w-full h-full"
+                          width={350} // Specify the width
+                          height={350} // Specify the height
+                          priority // Use this for hero images to prioritize loading
+                      />
+
                 </div>
             </div>
 
@@ -88,7 +93,7 @@ export function Hero() {
 
                 <div className="flex items-center justify-center w-[450px] h-20 ">
                 <div className="flex justify-center items-center w-3/5  h-full">
-                <button onClick={(e)=>handleDownload} className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                <button onClick={()=>handleDownload} className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
                     <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
                         <span className="inline-flex gap-4 h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
                         {isDownloading ? 'Downloading...' : 'Download CV'} <img src = "/skills/cloud-download.svg" style={{filter:'invert(1)'}} alt="arrow-down" className="w-6 h-6 cursor-pointer " />
@@ -98,16 +103,44 @@ export function Hero() {
                 <div>
                 <div className="flex gap-6 items-center justify-center flex-grow h-full">
                           <a href={process.env.NEXT_PUBLIC_INSTA_LINK} target="_blank" rel="noopener noreferrer">
-                            <img src="/skills/instagram.svg" alt="Instagram" className="w-6 h-6 cursor-pointer hover:animate-bounce" />
+                          <Image
+    src="/skills/instagram.svg"
+    alt="Instagram"
+    width={24}
+    height={24}
+    className="w-6 h-6 cursor-pointer hover:animate-bounce"
+/>
+
                           </a>
                           <a href={process.env.NEXT_PUBLIC_TWITTER_LINK} target="_blank" rel="noopener noreferrer">
-                            <img src="/skills/twitter.svg" alt="Twitter" className="w-6 h-6 cursor-pointer hover:animate-bounce bg-white" />
+                            <Image
+    src="/skills/twitter.svg"
+    alt="Instagram"
+    width={24}
+    height={24}
+    className="w-6 h-6 cursor-pointer hover:animate-bounce"
+/>
+
                           </a>
                           <a href={process.env.NEXT_PUBLIC_LINKEDIN_LINK} target="_blank" rel="noopener noreferrer">
-                            <img src="/skills/linkedin.svg" alt="LinkedIn" className="w-6 h-6 cursor-pointer hover:animate-bounce" />
+                            <Image
+    src="/skills/linkedin.svg"
+    alt="Instagram"
+    width={24}
+    height={24}
+    className="w-6 h-6 cursor-pointer hover:animate-bounce"
+/>
+
                           </a>
                           <a href={process.env.NEXT_PUBLIC_GITHUB_LINK} target="_blank" rel="noopener noreferrer">
-                            <img src="/skills/github-square.svg" alt="GitHub" className="w-6 h-6 cursor-pointer hover:animate-bounce bg-white" />
+                            <Image
+    src="/skills/github-square.svg"
+    alt="Instagram"
+    width={24}
+    height={24}
+    className="w-6 h-6 cursor-pointer hover:animate-bounce"
+/>
+
                           </a>
                         </div>
 

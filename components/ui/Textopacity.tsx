@@ -1,10 +1,9 @@
 'use client';
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 
-export function TextOpacity({ children }: { children: string}) {
-  // console.log(children);
+export function TextOpacity({ children }: { children: string }) {
   const element = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: element,
@@ -43,7 +42,7 @@ function Word({
 }: {
   children: string;
   range: [number, number];
-  progress: any;
+  progress: MotionValue<number>;  // Properly typed progress
 }) {
   const chars = children.split("");
   const amt = range[1] - range[0];
@@ -77,7 +76,7 @@ function Character({
 }: {
   children: string;
   range: [number, number];
-  progress: any;
+  progress: MotionValue<number>;  // Properly typed progress
 }) {
   const opacity = useTransform(progress, range, [0, 1]);
 
@@ -91,7 +90,7 @@ function Character({
       >
         {children}
       </span>
-      <motion.span style={{ opacity }} >{children}</motion.span>
+      <motion.span style={{ opacity }}>{children}</motion.span>
     </span>
   );
 }

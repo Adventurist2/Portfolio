@@ -5,7 +5,11 @@ import { Refcontext } from "@/app/provider";
 
 
 export function SubHero(){
-    const {AboutRef} = useContext(Refcontext);
+    const context  = useContext(Refcontext);
+    if(!context){
+        throw new Error("Refcontext must be used within a Refcontext.Provider");}
+
+    const {AboutRef} = context
     return <div ref = {AboutRef} className="bg-black z-10 w-screen h-screen overflow-hidden flex flex-col items-center">
         <TextOpacity>ABOUT ME</TextOpacity>
         <TextOpacity>

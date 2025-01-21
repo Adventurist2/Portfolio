@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState, useCallback } from "react";
 
 export function Typewriter({
@@ -23,16 +23,13 @@ export function Typewriter({
   const [text, setText] = useState("");
   const [currentStringIndex, setCurrentStringIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [isTyping, setIsTyping] = useState(autoStart);
 
   // Get the longest string to set a fixed width
   const maxStringLength = Math.max(...strings.map((str) => str.length));
 
   const handleTyping = useCallback(() => {
-    if (!isTyping) return;
-    
     const currentString = strings[currentStringIndex];
-    
+
     if (!isDeleting) {
       if (text === currentString) {
         // Finished typing current string
@@ -55,7 +52,7 @@ export function Typewriter({
       
       setText(text.slice(0, -1));
     }
-  }, [text, isDeleting, currentStringIndex, strings, loop, pauseTime, isTyping]);
+  }, [text, isDeleting, currentStringIndex, strings, loop, pauseTime]);
 
   useEffect(() => {
     const timeout = setTimeout(
@@ -67,7 +64,7 @@ export function Typewriter({
 
   return (
     <div className={`block-flex items-center ${className}`} style={{ minWidth: `${maxStringLength}ch` }}>
-      <span >{text}</span> {/* This will ensure consistent width even when text is empty */}
+      <span>{text}</span> {/* This will ensure consistent width even when text is empty */}
       <span 
         className={`ml-1 animate-pulse ${cursorClassName || 'text-black dark:text-white'}`}
         style={{ animationDuration: '1s' }}

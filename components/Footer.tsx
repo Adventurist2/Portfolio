@@ -13,7 +13,11 @@ export function Footer() {
     subject: "",
     message: "",
   });
-  const {ContactRef} = useContext(Refcontext);
+  const context = useContext(Refcontext);
+  if(!context){
+    throw new Error("use context outside of provider");
+  }
+  const {ContactRef} = context;
 
   function handleSubmit(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault(); // prevent default button behavior
@@ -52,7 +56,7 @@ export function Footer() {
           <h1 className="text-4xl font-bold mb-6">
             Interested in talking,
             <br />
-            let's do it.
+            let&apos;s do it.
           </h1>
           <form className="space-y-4" aria-labelledby="contact-form">
             <div className="flex gap-4">
