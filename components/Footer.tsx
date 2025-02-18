@@ -111,10 +111,10 @@ export function Footer() {
             <a href="mailto:acharychandan2005@gmail.com" className="text-2xl font-bold hover:underline">
               acharychandan2005@gmail.com
             </a>
-            <a href="tel:+919528391901" className="mt-2 block hover:underline">
-              +91-9528391901
-            </a>
-            <p>Los Angeles, America</p>
+            {/* <a href="tel:+919528391901" className="mt-2 block hover:underline">
+              +91-9528391901 (not true)
+            </a> */}
+            <p>IIT Kanpur , India</p>
           </div>
           <div className="flex gap-4 mt-8 lg:mt-0">
             <a href={process.env.NEXT_PUBLIC_INSTA_LINK} className="transition-opacity duration-500 hover:underline" target="_blank" rel="noopener noreferrer">

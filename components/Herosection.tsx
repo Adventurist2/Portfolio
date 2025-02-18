@@ -10,7 +10,10 @@ export function Hero() {
   const [isDownloading, setIsDownloading] = useState(false);
 
   const handleDownload = async () => {
+    // console.log("clicked")
     setIsDownloading(true);
+    // alert("Error while downloading file");
+    // console.log("Error while downloading file");
     try {
       const response = await fetch('/api/download_file', { method: 'GET' });
 

@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 
 export async function GET() {
+  // console.log("clicked");
   const filePath = path.join(process.cwd(), 'public', 'Chandan_Achary_Resume.pdf');
 
   try {
